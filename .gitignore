@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Data: downloaded and generated files are NOT stored in Git
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+*.duckdb
+*.duckdb.wal
+
+# Experiment logs
+mlruns/
+
+# Editors / OS
+.vscode/
+.DS_Store
+Thumbs.db
