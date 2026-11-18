@@ -13,3 +13,6 @@ This becomes the backbone of the methodology chapter.
 | 18-11-2026 | 8 | Finding: 116 of 590 sensors are constant | Profiling (src/profiling.py) | Rule: remove constant sensors (fitted on training data only) |
 | 18-11-2026 | 8 | Finding: 28 sensors have over 50% missing; 4 sensors 91.2%, 4 sensors 85.6% | Missing values come in groups, likely shared machines/steps | Rule and threshold to agree with supervisor at M2 |
 | 18-11-2026 | 8 | Finding: 538 sensors have 0-5% missing | Most sensors nearly complete | Small gaps to be imputed inside training folds |
+| 18-11-2026 | 8 | Finding: 178 of 446 usable sensors are near-duplicates (103 groups, abs. correlation >= 0.95) | src/redundancy.py | Rule: keep 1 sensor per group, decided on training data only; threshold 0.95 to test for sensitivity |
+| 18-11-2026 | 8 | Funnel: 590 -> 446 (remove constant + over 50% missing) -> 268 (remove duplicates) | Exploration on full data | To be reported at M2 |
+| 18-11-2026 | 8 | Observation: duplicate sensors repeat about every 135-138 columns | Suggests repeated measurement blocks | Cannot be confirmed (anonymised data); mention carefully |
