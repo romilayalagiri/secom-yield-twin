@@ -16,3 +16,6 @@ This becomes the backbone of the methodology chapter.
 | 18-11-2026 | 8 | Finding: 178 of 446 usable sensors are near-duplicates (103 groups, abs. correlation >= 0.95) | src/redundancy.py | Rule: keep 1 sensor per group, decided on training data only; threshold 0.95 to test for sensitivity |
 | 18-11-2026 | 8 | Funnel: 590 -> 446 (remove constant + over 50% missing) -> 268 (remove duplicates) | Exploration on full data | To be reported at M2 |
 | 18-11-2026 | 8 | Observation: duplicate sensors repeat about every 135-138 columns | Suggests repeated measurement blocks | Cannot be confirmed (anonymised data); mention carefully |
+| 18-11-2026 | 8 | Finding: runs are stored in time order (0 of 1,567 out of order) | src/drift.py | Row order can be used for time-aware splits |
+| 18-11-2026 | 8 | Finding: failure rate changes by month (Jul 22.2%, Aug 9.2%, Sep 2.9%, Oct 6.1%) | src/drift.py | Test blocks must contain enough failures; prefer metrics robust to changing rates |
+| 18-11-2026 | 8 | Finding: 253 of 446 usable sensors drift (KS test, first vs second half, Bonferroni p < 0.01/446) | Strong drift; partly confounded with failure-rate change | Expect SPC false alarms to rise over time; supports drift monitor |
